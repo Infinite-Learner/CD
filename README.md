@@ -202,7 +202,7 @@ Now, I illustrate how to checkout new branch. It's quite simple just add **-b** 
 **Scenerio :** A git merge conflict is an event that takes place when Git is unable to automatically resolve differences in code between two commits. Git can merge the changes automatically only if the commits are on different lines or branches.
 >>>\> **git branch**
 ![IMG](/Outputs/fetch.png)
-here you can see my branch **feat/task01** and **need to see what is happen**
+here you can see my branch **feat/task01** and **need to see what is happen changes in feat/task01_1**
  **git fetch command done successfully.**
  **Note :** **fetch** copies the files to local machine. 
  >>>>
