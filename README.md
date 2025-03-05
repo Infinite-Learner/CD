@@ -190,19 +190,21 @@ Now, I illustrate how to checkout new branch. It's quite simple just add **-b** 
 ![git_check_n](/Outputs/checkout_n.png)
  **git checkout command done successfully.**
  >>>>
->>**9.Switch**
+>>**11.Merge Conflict**
 >>
->>> **Syntax**
->>>>--> **git switch {branch_name}"**
->>>- **Note : switch** command used to switch between branches. **ensure** all files are committed in current branch before switch other.
->>>>---
 >>> **Example**
->>> **Illustration #9**
+>>> **Illustration #11**
 >>>>I'll going to illustrate **merge conflicts**
 **Scenerio :** A git merge conflict is an event that takes place when Git is unable to automatically resolve differences in code between two commits. Git can merge the changes automatically only if the commits are on different lines or branches.
->>>\> **git branch**
-![IMG](/Outputs/fetch.png)
+here you can see my branch **feat/task01** and **need to see what is happen changes in feat/task01_1**
 here you can see my branch **feat/task01** and **need to see what is happen change in feat/task01**
- **git fetch command done successfully.**
- **Note :** **fetch** copies the files to local machine. 
+**Demo :**
+    **one branch PR(feat/task01)**
+    ![alt](/Outputs/req.png)
+    ![alt](/Outputs/firstPull.png)
+    ![alt](/Outputs/accepted.png)
+    **another branch PR(feat/task01_1)**
+    ![alt](/Outputs/failreq.png)
+    ![alt](/Outputs/resolved.png)
+ **merge conflict resolved successfully.**
  >>>>
