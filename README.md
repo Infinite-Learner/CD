@@ -38,3 +38,135 @@ Now, execute command
 ![IMG](/Outputs/status.png)
 >>>git **status** command done successfully.
 >
+>>**3.Add**
+>>
+>>> **Syntax**
+>>>>--> **git add \<filename>.\<fileextension>**
+>>>- **Note :** To shift a unstaged files(modified files) to a **copy repository(local)**.[***unstaged-->staged***].
+>>>>---
+>>> **Example**
+>>> **Illustration #3**
+>>>>I'll going to take the previous example(Illustration #2)
+![add_before](/Input_Images/status.png)
+here, **modified : README.md** is our targeted file to move stage area.let's do further
+>>>\> **git add README.md** 
+![IMG](/Outputs/add.png)
+here you can see our target filed moved to stage area means ready to **commit**.
+ **git **add** command done successfully.**
+>>>>
+>>>>**Note** : **git add .** perform move all files to stage area.
+>>>>
+>>**4.Commit**
+>>
+>>> **Syntax**
+>>>>--> **git commit -m "{commit message}"**
+>>>- **Note :** Commit is the process of confirming the staged file, which is ready to modify the original (**server repository**). **IMPORTANT: A commit message** is necessary to perform a commit. If not, an error will occur.".
+>>>>---
+>>> **Example**
+>>> **Illustration #4**
+>>>>I'll going to take the previous example(Illustration #2)
+![commit_before](/Outputs/add.png)
+here, **modified : README.md** is our targeted file to confirm its ready to change in (**server repo**).let's do further
+>>>\> **git add README.md** 
+![IMG](/Outputs/commit.png)
+here you can see our target filed moved to stage area means ready to **commit**.
+ **git commit command done successfully.**
+>>>>
+>>>>**Note** : **COMMIT_MSG** is important
+>>>>
+>>**5.Push**
+>>
+>>> **Syntax**
+>>>>--> **git push origin {branch_name}"**
+>>>- **Note : push** command led to replace the original file by modified in mentioned **branch** (**server repository**). **IMPORTANT: git push** set origin as **main** to push as default branch".
+>>>>---
+>>> **Example**
+>>> **Illustration #5**
+>>>>I'll going to **push** my updated file.
+>>>\> **git push origin feat/task01** 
+![IMG](/Outputs/push.png)
+here you can see our modified files moved to my branch **feat/task01**.
+ **git push command done successfully.**
+>>>>
+>>**6.Pull**
+>>
+>>> **Syntax**
+>>>>--> **git pull origin {branch_name}"**
+>>>- **Note : pull** command led to retrieve a latest updated **branch** (**server repository**)to **work directory**. **IMPORTANT: git pull** replaces an existing files in local machine with updated one".
+>>>>---
+>>> **Example**
+>>> **Illustration #6**
+>>>>I'll going to **pull** from my branch **feat/task01**.
+>>>\> **git pull origin feat/task01** 
+![IMG](/Outputs/pull.png)
+here you can see my branch **feat/task01** is already upto date.
+ **git pull command done successfully.**
+ **Note :** **pull** overwrites the existing if needed. 
+>>>>
+>>**7.Fetch**
+>>
+>>> **Syntax**
+>>>>--> **git fetch origin {branch_name}"**
+>>>- **Note : fetch** command led to retrieve a latest updated **branch** (**server repository**) to **work directory**. **IMPORTANT: *not like git pull git fetch not replace existing files instead it just copies the files to working directory.*** replaces an existing files in local machine with updated one".
+>>>>---
+>>> **Example**
+>>> **Illustration #6**
+>>>>I'll going to **fetch** from my branch **main** and **feat/task01**.
+>>>\> **git fetch origin feat/task01**
+>>>\> **git fetch origin main** 
+![IMG](/Outputs/fetch.png)
+here you can see my branch **feat/task01** and 
+ **git fetch command done successfully.**
+ **Note :** **fetch** copies the files to local machine. 
+>>>>
+>>**7.Fetch**
+>>
+>>> **Syntax**
+>>>>--> **git fetch origin {branch_name}"**
+>>>- **Note : fetch** command led to retrieve a latest updated **branch** (**server repository**) to **work directory**. **IMPORTANT: *not like git pull git fetch not replace existing files instead it just copies the files to working directory.*** replaces an existing files in local machine with updated one".
+>>>>---
+>>> **Example**
+>>> **Illustration #7**
+>>>>I'll going to **fetch** from my branch **main** and **feat/task01**.
+>>>\> **git fetch origin feat/task01**
+>>>\> **git fetch origin main** 
+![IMG](/Outputs/fetch.png)
+here you can see my branch **feat/task01** and 
+ **git fetch command done successfully.**
+ **Note :** **fetch** copies the files to local machine. 
+>>>>
+>>**8.Branch**
+>>
+>>> **Syntax**
+>>>>--> **git branch"** => to list branches.
+>>>>--> **git branch {branch_name}"** => to create branch.
+>>>>--> **git branch --delete {branch_name}"** => to delete branch.
+>>>---
+>>>**Example**
+>>> **Illustration #8**
+>>>> \> **git branch"**
+To list branches:
+![git_branch](/Outputs/branch.png)
+>>>>--> **git branch feat/task01_2**
+To create branch :
+![git_branch_c](/Outputs/branch_create.png)
+>>>>--> **git branch --delete feat/task01_2**
+To delete branch:
+![git_branch_d](/Outputs/branch_delete.png)
+>>>>
+>>**8.Merge Conflict**
+>>
+>>> **Syntax**
+>>>>--> **git fetch origin {branch_name}"**
+>>>- **Note : fetch** command led to retrieve a latest updated **branch** (**server repository**) to **work directory**. **IMPORTANT: *not like git pull git fetch not replace existing files instead it just copies the files to working directory.*** replaces an existing files in local machine with updated one".
+>>>>---
+>>> **Example**
+>>> **Illustration #8**
+>>>>I'll going to illustrate **merge conflicts**
+**Scenerio :** A git merge conflict is an event that takes place when Git is unable to automatically resolve differences in code between two commits. Git can merge the changes automatically only if the commits are on different lines or branches.
+>>>\> **git branch**
+![IMG](/Outputs/fetch.png)
+here you can see my branch **feat/task01** and 
+ **git fetch command done successfully.**
+ **Note :** **fetch** copies the files to local machine. 
+>>>>
