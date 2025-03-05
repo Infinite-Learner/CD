@@ -11,9 +11,9 @@ This repository is developed to illustrate the ***git*** and its ***commands*** 
 >>>>
 >>> **Example**
 >>>>- \>**git clone "https://github.com/Infinite-Learner/CD.git"** # **https** method.
->>>>- \>**git clone "git@github.com:Infinite-Learner/CD.git"** # **SSH** method.
+>>>>- \>[**git clone git@github.com:Infinite-Learner/CD.git**]("git@github.com:Infinite-Learner/CD.git")  # **SSH** method.
 >>>>
->>>**Note** - \`Before using SSH need to do somethings : refer url [SSH](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux)
+>>>**Note** - \`Before using SSH need to do somethings : refer url [**SSH**](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/GitHub-SSH-Key-Setup-Config-Ubuntu-Linux)
 >>>>---------
 >>> **Illustration #1**
 >>>>Repository I'm going to clone below repository
@@ -144,6 +144,7 @@ here you can see my branch **feat/task01** and
 >>>---
 >>>**Example**
 >>> **Illustration #8**
+I'n going to perform **branch** operations.
 >>>> \> **git branch"**
 To list branches:
 ![git_branch](/Outputs/branch.png)
@@ -153,15 +154,33 @@ To create branch :
 >>>>--> **git branch --delete feat/task01_2**
 To delete branch:
 ![git_branch_d](/Outputs/branch_delete.png)
+**git branch command done successfully.**
 >>>>
->>**8.Merge Conflict**
+>>**9.Switch**
 >>
 >>> **Syntax**
->>>>--> **git fetch origin {branch_name}"**
->>>- **Note : fetch** command led to retrieve a latest updated **branch** (**server repository**) to **work directory**. **IMPORTANT: *not like git pull git fetch not replace existing files instead it just copies the files to working directory.*** replaces an existing files in local machine with updated one".
+>>>>--> **git switch {branch_name}"**
+>>>- **Note : switch** command used to switch between branches. **ensure** all files are committed in current branch before switch other.
 >>>>---
 >>> **Example**
->>> **Illustration #8**
+>>> **Illustration #9**
+>>>>I'll going to illustrate **switch**
+I'm currently in my **"feat/task01"** to switch **main** branch.
+>>>\> **git switch main**
+![IMG](/Outputs/switch_branch.png)
+here you can see my branch **feat/task01** and 
+ **git fetch command done successfully.**
+ **Note :** before performing **switch** branch commit all changes made on files i current directory else you encounter this :-
+    ![switch_err](/Outputs/switch_err.png)
+>>>>
+>>**19.Checkout**
+>>
+>>> **Syntax**
+>>>>--> **git switch {branch_name}"**
+>>>- **Note : switch** command used to switch between branches. **ensure** all files are committed in current branch before switch other.
+>>>>---
+>>> **Example**
+>>> **Illustration #9**
 >>>>I'll going to illustrate **merge conflicts**
 **Scenerio :** A git merge conflict is an event that takes place when Git is unable to automatically resolve differences in code between two commits. Git can merge the changes automatically only if the commits are on different lines or branches.
 >>>\> **git branch**
@@ -169,4 +188,20 @@ To delete branch:
 here you can see my branch **feat/task01** and 
  **git fetch command done successfully.**
  **Note :** **fetch** copies the files to local machine. 
->>>>
+ >>>>
+>>**9.Switch**
+>>
+>>> **Syntax**
+>>>>--> **git switch {branch_name}"**
+>>>- **Note : switch** command used to switch between branches. **ensure** all files are committed in current branch before switch other.
+>>>>---
+>>> **Example**
+>>> **Illustration #9**
+>>>>I'll going to illustrate **merge conflicts**
+**Scenerio :** A git merge conflict is an event that takes place when Git is unable to automatically resolve differences in code between two commits. Git can merge the changes automatically only if the commits are on different lines or branches.
+>>>\> **git branch**
+![IMG](/Outputs/fetch.png)
+here you can see my branch **feat/task01** and 
+ **git fetch command done successfully.**
+ **Note :** **fetch** copies the files to local machine. 
+ >>>>
