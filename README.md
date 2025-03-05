@@ -203,6 +203,7 @@ Now, I illustrate how to checkout new branch. It's quite simple just add **-b** 
 >>>\> **git branch**
 ![IMG](/Outputs/fetch.png)
 here you can see my branch **feat/task01** and **need to see what is happen changes in feat/task01_1**
+here you can see my branch **feat/task01** and **need to see what is happen change in feat/task01**
  **git fetch command done successfully.**
  **Note :** **fetch** copies the files to local machine. 
  >>>>
