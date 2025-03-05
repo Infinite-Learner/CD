@@ -173,21 +173,22 @@ here you can see my branch **feat/task01** and
  **Note :** before performing **switch** branch commit all changes made on files i current directory else you encounter this :-
     ![switch_err](/Outputs/switch_err.png)
 >>>>
->>**19.Checkout**
+>>**10.Checkout**
 >>
 >>> **Syntax**
->>>>--> **git switch {branch_name}"**
->>>- **Note : switch** command used to switch between branches. **ensure** all files are committed in current branch before switch other.
+>>>>--> **git checkout {branch_name}"**
+>>>- **Note : checkout** command used to copy the existing branch to provide seperate work environment. **ensure** to create new **branch** before **checkout**.
 >>>>---
 >>> **Example**
->>> **Illustration #9**
->>>>I'll going to illustrate **merge conflicts**
-**Scenerio :** A git merge conflict is an event that takes place when Git is unable to automatically resolve differences in code between two commits. Git can merge the changes automatically only if the commits are on different lines or branches.
->>>\> **git branch**
-![IMG](/Outputs/fetch.png)
-here you can see my branch **feat/task01** and 
- **git fetch command done successfully.**
- **Note :** **fetch** copies the files to local machine. 
+>>> **Illustration #10**
+>>>>I'll going to illustrate **checkout feat/task01**
+>>>\> **git checkout feat/task01**
+![IMG](/Outputs/checkout_ex.png)
+here you can see my branch **feat/task01** is already exists so it switched.
+Now, I illustrate how to checkout new branch. It's quite simple just add **-b** before **branch_name** on previous command.
+\>**git checkout -b feat/task01_2** 
+![git_check_n](/Outputs/checkout_n.png)
+ **git checkout command done successfully.**
  >>>>
 >>**9.Switch**
 >>
