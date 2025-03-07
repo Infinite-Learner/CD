@@ -1,0 +1,50 @@
+body{
+    box-sizing: border-box;
+}
+.box-model{
+    background-color: aliceblue;
+    position: relative;
+    top:50px;
+    left:25%;
+}
+.border-box{
+    background-color: #f9cc9d;
+    position: absolute;
+    border: dashed black 0.5px;
+    padding: 120px 280px;
+}
+.margin-box{
+    background-color: #fddd9b;
+    position: absolute;
+    border:solid black 1px;
+    padding: 90px 210px;
+    left: 70px;
+    top:30px;
+}
+.padding-box{
+    background-color: #c3d08b;
+    position: absolute;
+    padding: 60px 140px;
+    border: dashed black 0.5px;
+    top: 60px;
+    left:140px;
+}
+.content-box{
+    background-color: #8cb6c0;
+    position:absolute;
+    border: solid black 1px;
+    padding: 30px 70px;
+    top:90px;
+    left: 210px;
+}
+h4{
+    position: absolute;
+    top:-10px;
+    left:20px;
+    color:black;
+}
+.content-box h4{
+    position: absolute;
+   top: 0px;
+   left:30px
+}
