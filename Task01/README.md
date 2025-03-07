@@ -17,11 +17,11 @@ This repository is developed to illustrate the ***git*** and its ***commands*** 
 >>>>---------
 >>> **Illustration #1**
 >>>>Repository I'm going to clone below repository
->![IMG](/Input_Images/repo.png)
+>![IMG](/Task01/Task01/Task01/Input_Images/repo.png)
 git **clone** comamnd is entered : 
->![IMG](/Outputs/clone.png)
+>![IMG](/Task01/Outputs/clone.png)
 **Result :**
-![IMG](/Outputs/clone_out.png)
+![IMG](/Task01/Outputs/clone_out.png)
 >>>git **clone** command done successfully.
 >
 >>**2.Status**
@@ -35,7 +35,7 @@ git **clone** comamnd is entered :
 >>>>I modified README.md files so it changed 'M'.
 Now, execute command
 >>>\> **git status** 
-![IMG](/Outputs/status.png)
+![IMG](/Task01/Outputs/status.png)
 >>>git **status** command done successfully.
 >
 >>**3.Add**
@@ -47,10 +47,10 @@ Now, execute command
 >>> **Example**
 >>> **Illustration #3**
 >>>>I'll going to take the previous example(Illustration #2)
-![add_before](/Input_Images/status.png)
+![add_before](/Task01/Input_Images/status.png)
 here, **modified : README.md** is our targeted file to move stage area.let's do further
 >>>\> **git add README.md** 
-![IMG](/Outputs/add.png)
+![IMG](/Task01/Outputs/add.png)
 here you can see our target filed moved to stage area means ready to **commit**.
  **git **add** command done successfully.**
 >>>>
@@ -65,10 +65,10 @@ here you can see our target filed moved to stage area means ready to **commit**.
 >>> **Example**
 >>> **Illustration #4**
 >>>>I'll going to take the previous example(Illustration #2)
-![commit_before](/Outputs/add.png)
+![commit_before](/Task01/Outputs/add.png)
 here, **modified : README.md** is our targeted file to confirm its ready to change in (**server repo**).let's do further
 >>>\> **git add README.md** 
-![IMG](/Outputs/commit.png)
+![IMG](/Task01/Outputs/commit.png)
 here you can see our target filed moved to stage area means ready to **commit**.
  **git commit command done successfully.**
 >>>>
@@ -84,7 +84,7 @@ here you can see our target filed moved to stage area means ready to **commit**.
 >>> **Illustration #5**
 >>>>I'll going to **push** my updated file.
 >>>\> **git push origin feat/task01** 
-![IMG](/Outputs/push.png)
+![IMG](/Task01/Outputs/push.png)
 here you can see our modified files moved to my branch **feat/task01**.
  **git push command done successfully.**
 >>>>
@@ -98,7 +98,7 @@ here you can see our modified files moved to my branch **feat/task01**.
 >>> **Illustration #6**
 >>>>I'll going to **pull** from my branch **feat/task01**.
 >>>\> **git pull origin feat/task01** 
-![IMG](/Outputs/pull.png)
+![IMG](/Task01/Outputs/pull.png)
 here you can see my branch **feat/task01** is already upto date.
  **git pull command done successfully.**
  **Note :** **pull** overwrites the existing if needed. 
@@ -114,7 +114,7 @@ here you can see my branch **feat/task01** is already upto date.
 >>>>I'll going to **fetch** from my branch **main** and **feat/task01**.
 >>>\> **git fetch origin feat/task01**
 >>>\> **git fetch origin main** 
-![IMG](/Outputs/fetch.png)
+![IMG](/Task01/Outputs/fetch.png)
 here you can see my branch **feat/task01** and 
  **git fetch command done successfully.**
  **Note :** **fetch** copies the files to local machine. 
@@ -130,7 +130,7 @@ here you can see my branch **feat/task01** and
 >>>>I'll going to **fetch** from my branch **main** and **feat/task01**.
 >>>\> **git fetch origin feat/task01**
 >>>\> **git fetch origin main** 
-![IMG](/Outputs/fetch.png)
+![IMG](/Task01/Outputs/fetch.png)
 here you can see my branch **feat/task01** and 
  **git fetch command done successfully.**
  **Note :** **fetch** copies the files to local machine. 
@@ -147,13 +147,13 @@ here you can see my branch **feat/task01** and
 I'n going to perform **branch** operations.
 >>>> \> **git branch"**
 To list branches:
-![git_branch](/Outputs/branch.png)
+![git_branch](/Task01/Outputs/branch.png)
 >>>>--> **git branch feat/task01_2**
 To create branch :
-![git_branch_c](/Outputs/branch_create.png)
+![git_branch_c](/Task01/Outputs/branch_create.png)
 >>>>--> **git branch --delete feat/task01_2**
 To delete branch:
-![git_branch_d](/Outputs/branch_delete.png)
+![git_branch_d](/Task01/Outputs/branch_delete.png)
 **git branch command done successfully.**
 >>>>
 >>**9.Switch**
@@ -167,11 +167,11 @@ To delete branch:
 >>>>I'll going to illustrate **switch**
 I'm currently in my **"feat/task01"** to switch **main** branch.
 >>>\> **git switch main**
-![IMG](/Outputs/switch_branch.png)
+![IMG](/Task01/Outputs/switch_branch.png)
 here you can see my branch **feat/task01** and 
  **git fetch command done successfully.**
  **Note :** before performing **switch** branch commit all changes made on files i current directory else you encounter this :-
-    ![switch_err](/Outputs/switch_err.png)
+    ![switch_err](/Task01/Outputs/switch_err.png)
 >>>>
 >>**10.Checkout**
 >>
@@ -183,11 +183,11 @@ here you can see my branch **feat/task01** and
 >>> **Illustration #10**
 >>>>I'll going to illustrate **checkout feat/task01**
 >>>\> **git checkout feat/task01**
-![IMG](/Outputs/checkout_ex.png)
+![IMG](/Task01/Outputs/checkout_ex.png)
 here you can see my branch **feat/task01** is already exists so it switched.
 Now, I illustrate how to checkout new branch. It's quite simple just add **-b** before **branch_name** on previous command.
 \>**git checkout -b feat/task01_2** 
-![git_check_n](/Outputs/checkout_n.png)
+![git_check_n](/Task01/Outputs/checkout_n.png)
  **git checkout command done successfully.**
  >>>>
 >>**11.Merge Conflict**
@@ -200,11 +200,11 @@ here you can see my branch **feat/task01** and **need to see what is happen chan
 here you can see my branch **feat/task01** and **need to see what is happen change in feat/task01**
 **Demo :**
     **one branch PR(feat/task01)**
-    ![alt](/Outputs/req.png)
-    ![alt](/Outputs/firstPull.png)
-    ![alt](/Outputs/accepted.png)
+    ![alt](/Task01/Outputs/req.png)
+    ![alt](/Task01/Outputs/firstPull.png)
+    ![alt](/Task01/Outputs/accepted.png)
     **another branch PR(feat/task01_1)**
-    ![alt](/Outputs/failreq.png)
-    ![alt](/Outputs/resolved.png)
+    ![alt](/Task01/Outputs/failreq.png)
+    ![alt](/Task01/Outputs/resolved.png)
  **merge conflict resolved successfully.**
  >>>>
