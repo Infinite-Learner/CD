@@ -4,11 +4,10 @@
 >>>
 ```
 Rules : 
-        1.Don't use height and width
-        2.Try you develop using standard like 
+        1.Try you develop using standard like 
             ->Naming Conventions(Class and Id)
             ->Follow DOM hierarchy.
-        3.Style using CSS without using Height and Width.       
+        2.Style using CSS without using Height and Width.       
 ```
 ## Lets Implement this : 
 >File_name : **task02.html**(Skeleton of Website.)
