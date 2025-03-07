@@ -42,7 +42,8 @@ Rules :
     box-sizing: border-box;
 }
 .border-box
-{ margin: 20px 100px 20px 100px;
+{ 
+    margin: 20px 100px 20px 100px;
     padding:5%;
     background: #f9cc9d;
     border:black dotted 1px;
