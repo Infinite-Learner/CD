@@ -1,0 +1,47 @@
+body{
+    box-sizing: border-box;
+}
+.box-model{
+    background-color: aliceblue;
+    position: relative;
+}
+.border-box{
+    background-color: #f9cc9d;
+    padding: 150px 300px;
+    position: absolute;
+}
+.margin-box{
+    background-color: #fddd9b;
+    padding: 120px 270px;
+    position: absolute;
+    top:10%;
+    left:5%;
+    border:solid black 1px;
+}
+.padding-box{
+    background-color: #c3d08b;
+    position: absolute;
+    padding: 90px 240px;
+    top:10%;
+    left:5%;
+}
+.content-box{
+    background-color: #8cb6c0;
+    position:absolute;
+    padding: 60px 180px;
+    top:15%;
+    left:12%;
+    border: solid black 1px;
+}
+h4{
+    position: absolute;
+    top:-15px;
+    left:5px;
+    padding: 0;
+    color:black;
+}
+.content-box h4{
+    position: absolute;
+   top: 30px;
+   left:150px;
+}
