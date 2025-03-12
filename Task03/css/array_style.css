@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'sdGlitch';
+    src: url(../fonts/SDGlitch_Demo.ttf);
+}
+*{
+    font-family:'sdGlitch';
+    margin: auto auto;
+    padding: auto;
+    color :  #1d5822;
+}
+body{
+    background-color: #030303;
+    box-sizing: border-box;
+}
+header{
+    background-color: black;
+    padding:60px 90px;
+    border: #004100 groove 20px;
+    font-size: 30px;
+    width: 70%;
+    margin-bottom: 90px;
+    position: relative;
+
+}
+header>h2{
+    color :#09d409;
+    position:absolute;
+    top: 40px;
+    left : 30%;
+}
+.container{   
+
+    position: relative;
+    font-size: 25px;
+    /* padding: 9px 0px 15px 30px; */
+    /* border : #004100  solid 4px; */
+    color:#328631;
+    width:fit-content;
+    display: flex;
+    /* border-radius: 5px; */
+    margin: 0 25% 0 10%;
+    top:-70px;
+}
+button{
+    position: relative;
+    width:fit-content;
+    border:#09d409 dashed 2px;
+    background: none;
+    width:160px;
+    height:50px;
+    font-size:30px;
+}
+button:hover{
+    border:solid #1d5822 1px;
+    box-shadow: #1d5822 2px 3px;
+    background-color: #09d409;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bolder;
+    /* transform: translate(-3px,-3px); */
+}
+.arrays-operations-container{
+    position:absolute;
+    width: max-content;
+    left:10px;
+    border:dotted green 2px;
+}
+.arrays-methods-basics{
+    margin:0 20px;
+    padding: 0;
+    width:620px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+/* .arrays-methods-basics>li>button:hover{
+    background-color: #09d409;
+    border: 3px ridge black;
+    box-shadow: #004100 2px 3px;
+} */
+li{
+    margin: 5px 5px 0 0;
+}
+li>button{
+    background: none;
+    height: 50px !important;
+    width:200px !important;
+    font-size: 20px;
+}
+.operation-output{
+    display:block;
+    color:#09d409;
+    border : #1d5822 solid 3px;
+    border-radius: 9px;
+    background:black;
+    padding: 15px;
+    height: fit-content;
+}
+.array-data-feed{
+    margin-top: 9px;
+    width: fit-content;
+    height: fit-content;
+}

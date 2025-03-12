@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'sdGlitch';
+    src: url(../fonts/SDGlitch_Demo.ttf);
+}
+*{
+    font-family:'sdGlitch';
+    margin: auto auto;
+    padding: auto;
+    color :  #1d5822;
+}
+body{
+    background-color: #030303;
+    box-sizing: border-box;
+}
+header{
+    background-color: black;
+    padding:60px 80px;
+    border: #004100 groove 20px;
+    font-size: 30px;
+    width: 70%;
+    margin-bottom: 90px;
+    position: relative;
+
+}
+header>h2{
+    color : #09d409;
+    position:absolute;
+    top: 10px;
+    left : 30%;
+
+}
+.container{
+    width: max-content;
+    margin-top: 60px;
+    font-size: 25px;
+    border : #004100  solid 30px;
+    color:#328631;
+    height: auto;
+    border-radius: 14px;
+    margin: 20px 25% 0 25%;
+    position: relative;
+}
+.container>.tasks{
+    padding:10px;
+    font-style: italic;
+    font-size: larger;
+
+}
+.tasks>h4{
+    position: absolute;
+    color: #409a3e;
+    top: -30px;
+    left:-15px;
+    padding-bottom: 10px;
+
+}
+.tasks>ul>li{
+    list-style:  none;
+    padding-bottom: 10px;
+}
+.tasks>ul>li>a{
+    text-decoration: none;
+}
+.tasks>ul>li>a:hover{
+    color:#00FF00;
+}
