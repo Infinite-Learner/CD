@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'sdGlitch';
+    src: url(../fonts/SDGlitch_Demo.ttf);
+}
+*{
+    font-family:'sdGlitch';
+    margin: auto auto;
+    padding: auto;
+    color :  #1d5822;
+}
+body{
+    background-color: #030303;
+    box-sizing: border-box;
+}
+header{
+    background-color: black;
+    padding:60px 90px;
+    font-size: 30px;
+    width: 70%;
+    margin-bottom: 30px;
+    position: relative;
+
+}
+.input-container{
+    padding:50px;
+    width:70%;
+    border:#004100 3px solid;
+    border-radius: 50px;
+    display: flex;
+}
+.cross{
+    color:red;
+    font-size: 30px;
+
+}
+
+.input-container>h4{
+    font-size: 30px;
+}
+label{
+    font-size: 50px;
+    
+}
+/* .input-container:hover{
+    font-size: 90px;
+    background-color: wheat;
+} */
+.input-area>input{
+    width:40%;
+    height:52px;
+    border-radius: 15px;
+    margin-right: 16%;
+    font-size: 50px;
+
+}
+.output-container{
+    margin: 10px;
+    border:white solid 3px;
+
+}
+/* .submit-btn{
+    background: none;
+    height:60px;
+    width:120px;
+    position: relative;
+    left:90px;
+    margin-top:10px;
+} */
