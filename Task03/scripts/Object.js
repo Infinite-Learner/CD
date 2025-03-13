@@ -2,11 +2,12 @@
 var create_btn = document.getElementsByClassName("create-array");
 var arrOperationsContainer = document.getElementsByClassName("array-operations-container");
 var arrOperationsKey  = document.getElementsByClassName("operation-btn");
-var create_Array = document.getElementsByClassName("array-data-feed");
+var create_Object = document.getElementsByClassName("array-data-feed");
 var output = document.querySelector(".operation-output");
-var create_container = document.getElementsByClassName("array-input");
+var create_container = document.getElementsByClassName("Object-input");
 
-var created_Array = [];
+var created_Objects = JSON.parse(this.localStorage.Object);
+var tempObj={};
 function length (){
     var length_div = document.createElement("div");
     var length_lbl = document.createElement("label");
@@ -38,7 +39,7 @@ function toString(){
     }
     out_box = document.querySelector(".string-text");
     value = out_box.value;
-    out_box.value = created_Array.toString();
+    out_box.value = "";
 
 }
 function at(){
@@ -100,27 +101,30 @@ function slice(){
 
 }
 arrOperationsContainer[0].addEventListener('click',(e)=>{
-   eval(e.target.innerHTML.split(" ")[1]);
+   console.log(e.target.innerHTML.split(".")[1]);
 });
-create_Array[0].addEventListener('click',()=>{
-    var arrayName = document.getElementsByClassName("array-name")[0].value;
-    var arrayData = document.getElementsByClassName("array-data")[0].value;
-    if(arrayName==""|| arrayData=="") return alert("Data Insufficient");
-    create_container[0].style.display="none";
-    createNewArray(arrayName,arrayData)
+create_Object[0].addEventListener('click',()=>{
+    var Object_Name = document.getElementsByClassName("Object-name")[0].value;
+    var Object_Key = document.getElementsByClassName("Object-key")[0].value;
+    var Object_value = document.getElementsByClassName("Object-value")[0].value;
+    if(Object_Name==""||Object_Key==""||Object_value=="") return alert("Data Insufficient");
+    // create_container[0].style.display="none";
+    createNewObject(Object_Name,Object_Key,Object_value)
 });
 
-function createNewArray(arrayName,arrayData){
+function createNewObject(Object_Name,Object_Key,Object_value){
+     tempObj[Object_Key]=Object_value;
     var output_div = document.createElement("div");
     var array_label = document.createElement("label");
     var array_data = document.createElement("label");
     output_div.className = "array-Meta";
-    created_Array = arrayData.split(",");
-    console.log(created_Array);
-    array_label.innerHTML = arrayName;
-    array_data.innerHTML = created_Array;
-    output_div.append(array_label,array_data);
-    output.appendChild(output_div);
+    created_Objects[Object_Name]=tempObj;
+    console.log(created_Objects);
+    // array_label.innerHTML = aName;
+    // array_data.innerHTML = created_Array;
+    // output_div.append(array_label,array_data);
+    // output.appendChild(output_div);
+    window.localStorage.setItem("NewObject",JSON.stringify(created_Objects));
     document.querySelector(".container").style = `padding: 15px;
                                                   border:#004100 solid 4px;
                                                   border-radius:5px
