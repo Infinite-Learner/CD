@@ -1,22 +1,24 @@
 var submit = document.getElementsByClassName("submit-btn");
 var inpField = document.getElementsByClassName("input-container");
  console.log(inpField);
-inpField[0].addEventListener("mouseover",()=>{
-    inpField[0].style['background']="grey";
+inpField[0].addEventListener("focusin",()=>{
+    document.querySelectorAll("h4").forEach(ele=>ele.style.color="#00ff00");
+    document.querySelectorAll(".input-area").forEach(ele=>ele.querySelectorAll("label").forEach(ele=>ele.style.color="#00ff00"));
 });
-inpField[0].addEventListener("mouseleaves",()=>{
-    inpField[0].style['background']="black";
+inpField[0].addEventListener("focus out",()=>{
+    document.querySelectorAll("h4").forEach(ele=>ele.style.color="#1d5822")
+        document.querySelectorAll(".input-area").forEach(ele=>ele.querySelectorAll("label").forEach(ele=>ele.style.color="#1d5822"));
 });
 submit[0].addEventListener("click",()=>{
     var  rowinp = document.getElementById("row-inp");
     var colinp = document.getElementById("col-inp");
-    if(isNaN(parseInt(rowinp.value))||isNaN(parseInt(colinp.value))) return alert("Enter Valid Inputs.");
+    if(isNaN(parseInt(rowinp.value))||isNaN(parseInt(colinp.value))||rowinp.value<1||colinp.value<1) return alert("Enter Valid Inputs.");
     rowVal = parseInt(rowinp.value);
     colVal = parseInt(colinp.value);
     var table = document.getElementsByClassName('output-container')[0];
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");  
-    table.innerHTML=`<h4>Entered Rows : ${rowVal} || Entered colums : ${colVal}</h4>`;
+    table.innerHTML=`<h4>Entered Rows : <span>${rowVal}</span> || Entered colums : <span>${colVal}</span></h4>`;
     var cell_Value = 1;
     for(var i=0;i<rowVal;i++){
         var row = document.createElement("tr");

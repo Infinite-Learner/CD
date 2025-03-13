@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'sdGlitch';
+    src: url(../fonts/SDGlitch_Demo.ttf);
+}
+*{
+    font-family:'sdGlitch';
+    margin: auto auto;
+    padding: auto;
+    color :  #1d5822;
+}
+body{
+    background-color: #030303;
+    box-sizing: border-box;
+}
+header{
+    background-color: black;
+    padding:60px 90px;
+    border: #004100 groove 20px;
+    font-size: 30px;
+    width: 70%;
+    margin-bottom: 90px;
+    position: relative;
+
+}
+header>h2{
+    color :#09d409;
+    position:absolute;
+    top: 40px;
+    left : 30%;
+}
+.container{   
+    width:470px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    margin: 10% 25% 0 5%;
+    gap : 10px;
+    flex-wrap:wrap;
+} 
+.button{
+    border:#09d409 dashed 2px;
+    background: none;
+    height:50px;
+    width: 200px;
+    font-size:30px;
+}
+.button:hover{
+    border:solid #1d5822 1px;
+    box-shadow: #1d5822 2px 3px;
+    background-color: #09d409;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bolder;
+    /* transform: translate(-3px,-3px); */
+}
+.created-ele{
+    border:#09d409 dashed 2px;
+    background: none;
+    color:rgb(0, 255, 0);
+    height:50px;
+    width: 200px;
+    font-size:30px;
+    appearance: auto;
+    padding-block: 5px;
+    padding-inline: 10px;
+    text-align: center;
+
+}
+.created-ele:hover{
+    border:solid #1d5822 1px;
+    box-shadow: #1d5822 2px 3px;
+    background-color: #09d409;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bolder;
+    /* transform: translate(-3px,-3px); */
+}
