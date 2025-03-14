@@ -38,12 +38,11 @@ header>h2{
     width:fit-content;
     display: flex;
     /* border-radius: 5px; */
-    margin: 0 25% 0 10%;
+    margin: 0 25% 0 5%;
     top:-70px;
 }
 button{
     position: relative;
-    width:fit-content;
     border:#09d409 dashed 2px;
     background: none;
     width:160px;

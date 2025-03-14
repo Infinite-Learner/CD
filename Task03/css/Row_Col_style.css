@@ -56,7 +56,14 @@ label{
 .output-container{
     margin: 10px;
     border:white solid 3px;
+    width: fit-content;
+    height: fit-content;
 
+}
+td{
+    color:#00ff00;
+    border : 1px ridge #00ff00;
+    width: max-content;
 }
 /* .submit-btn{
     background: none;
