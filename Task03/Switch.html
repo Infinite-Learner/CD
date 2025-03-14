@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height="225px" width=device-height="225px" width, initial-scale=1.0">
+    <title>Lets Switch ON</title>
+    <link rel="stylesheet" href="css/switch.css">
+</head>
+
+<body>
+    <div class="switch-sh">
+        <button class="switch-sh" value="0">
+            See-Components
+        </button>
+    </div>
+    <div class="switch-control">
+        <ul class="switch-components" style="display: block;">
+            <li class="light-container"><button class="button-untoggled" value="0">Light</button>
+                <div class="controllers">
+                    <label class="switch">
+                        <input type="checkbox" value="0">
+                        <span class="slider">
+                        </span>
+                    </label>
+                    <img src="img/bulb_on.png" style="display: none;" alt="" height="225px" width="225px" srcset="" class="light-on">
+                    <img src="img/bulb_off.png" height="225px" width="225px" alt="" srcset="" class="light-off">
+                </div>
+            </li>
+            <li class="fan-container"><button class="button-untoggled" value="0">Fan</button>
+                <div class="controllers">
+                    <label class="switch" >
+                        <input type="checkbox" value="0" >
+                        <span class="slider"></span>
+                    </label>
+                    <img src="img/fan-on.gif" style="display: none;" alt="" height="225px" width="225px" srcset="" class="fan-on">
+                    <img src="img/fan-of-bg.png" height="225px" width="225px" alt="" srcset="" class="fan-off">
+                </div>
+            </li>
+            <li class="theme-container"><button class="button-untoggled" value="0">Theme</button>
+                <div class="controllers">
+                    <label class="switch">
+                        <input type="checkbox" value="0">
+                        <span class="slider"></span>
+                    </label>
+                    <img src="img/dark.png" class="theme-on" style="display: none;" alt="" height="225px" width="225px" srcset="" >
+                    <img src="img/light.jpeg" alt="" srcset="" class="theme-off" height="225px" width="225px">
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="scripts/switch.js"></script>
+
+</html>

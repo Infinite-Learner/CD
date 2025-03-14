@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+
+}
+.loader-h
+{
+    position: relative;
+     width:100px;
+     height:10px;
+     background-color: #000;
+}
+.loader-h::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0bec7c;
+    transform-origin: left;
+    animation: animright 8s linear infinite;
+}
+.h-btn{
+    width: 600px;
+    color:red;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn>button{
+    width:300px;
+}
+.btn>button{
+    width:300px;
+}
+.btn-v>button{
+    width:300px;
+}
+.btn-v>button{
+    width:300px;
+}
+.v-btn{
+    position: relative;
+    height:10px;
+    width: 110px;
+    color:red;
+    display: block;
+    flex-wrap: wrap;
+}
+.loader-v
+{
+    position:absolute;
+    top:0px;
+     width:2px;
+     height: 100px;
+     margin-top: 100px;
+     background-color: #020202;
+}
+.loader-v::before{
+    content: "";
+    width: 100%;
+    position: absolute;
+    top:90px;
+    height: 100%;
+    margin-left: 10px;
+    background-color: #0bec7c;
+    transform-origin: left;
+    animation: animleft 8s linear infinite;
+    }
+
+@keyframes animright {
+    0% ,20%{
+        transform: scaleX(0);
+    }
+    40%{
+
+        transform: scaleX(0.4);
+        transform-origin: left;
+    }
+}
+/* @keyframes animleft {
+    0%,20%{
+        transform: scaleY(0);
+    }
+    40%{
+        transform: scaleY(1);
+    }
+  
+} */
+

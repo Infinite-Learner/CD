@@ -1,0 +1,119 @@
+
+  @font-face {
+    font-family: 'sdGlitch';
+    src: url(../fonts/SDGlitch_Demo.ttf);
+}
+*{
+    font-family:'sdGlitch';
+    margin: auto auto;
+    padding: auto;
+    color :  #1d5822;
+}
+body{
+    background-color: #030303;
+    box-sizing: border-box;
+}
+.switch-sh{
+    margin: 5px 0 0 5px   ; 
+}
+button{
+    position: relative;
+    border:#09d409 dashed 2px;
+    background: none;
+    width:fit-content;
+    height:50px;
+    font-size:30px;
+    margin: 0 ;
+    padding: 0;
+}
+
+.button-toggled{
+    border:solid #1d5822 1px;
+    box-shadow: #1d5822 2px 3px;
+    background-color: #09d409;
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bolder;
+    /* transform: translate(-3px,-3px); */
+}
+.switch-control{
+  display: none;
+    position:absolute;
+    width: 600px;
+    left:10px;
+    margin: 10px 0 0 0;
+    padding: 0 0 0 0;
+    border:dotted #09d409 2px;
+}
+.switch-components{
+    margin: 0;
+    padding: 10px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eafce5;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(55, 235, 19);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #36f706;
+  }
+  input:focus + .slider {
+    box-shadow: 0 0 1px #0dff19;
+  }
+  
+  input:checked + .slider:before {
+    background-color: rgb(255, 255, 255);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+li{
+    margin: 0px 0px 0 0;
+    display: flex;
+    padding: 0 0 ;
+    flex-wrap: wrap;
+    align-items: center;
+}
+li>button{
+    background: none;
+    height: 50px !important;
+    width:200px !important;
+    font-size: 20px;
+}
+.controllers{
+    display: none;
+    gap:20px
+}
