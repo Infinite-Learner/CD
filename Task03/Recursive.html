@@ -3,22 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Role Of Recursive</title>
-    <link rel="stylesheet" href="./css/rec_style.css">
+    <title>Row and Column Tutorial</title>
+    <link rel="stylesheet" href="./css/Row_Col_style.css">
+
 </head>
-<body>
-    <div class="h-btn">
-        <div class="btn">
-            <button>HI</button>
+<body >
+    <header><center><h2>Table Genration using<br>Row and Column. using Recursion</h2></center></header>
+    <div class="container">
+        <div class="input-container">
+            <h4>
+                Enter Row and Column value to generate table structure
+            </h4>
+            <div class="input-area">
+                <label for="">
+                    Enter rows 
+                </label>
+                <input type="number" name="row-input" id="row-inp" min="1">
+                <span class="cross">X</span>
+            </div>
+            <div class="input-area">
+                <label for="">Enter column</label>
+                <input type="number" name="col-input" id="col-inp" min="1">
+            </div>
+            <button class="submit-btn">
+                create-table
+            </button>
         </div>
-        <div class="loader-h"></div>
-    </div>
-    <div class="v-btn">
-        <div class="btn-v">
-            <button>VI</button>
-        </div>
-        <div class="loader-v">
+        <div class="output-container">
+
         </div>
     </div>
 </body>
+<script src="./scripts/rec.js"></script>
 </html>
