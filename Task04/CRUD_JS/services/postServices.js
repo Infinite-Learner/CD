@@ -23,7 +23,7 @@
 
 // module.exports = addNewPost;
 
-const db = require("../db/dbonfig");
+const db = require("../db/dbconfig");
 
 const addNewPost = async (id, userId, title, body) => {
     try {

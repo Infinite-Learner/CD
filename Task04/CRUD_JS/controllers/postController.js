@@ -7,21 +7,24 @@ const addPostController = async(req,res)=>{
     const response = await addNewPost(id, userId, title, body);
     return res.json(response);
 } 
-const getPostController = async(req,res)=>{
-    let response = {};
-    if(req.param['id']!==undefined) {
-        console.log("calling")
-        response  = await getPostById(req.params.id);
-    }
-    else if(req.params['userId']!==undefined){
-        console.log(req.params['userId']);
-        response = await getAllPostsbyUserId(req.params['userId']);
-    }
-    else
-        response = await getAllPosts();
+const getAllPostsController = async(req,res)=>{
+    response = await getAllPosts();
     return res.json(response);
 }
-
+const getPostByIdController = async(req,res)=>{
+    if(req.param['id']===undefined) {
+        return res.json({message:"Invalid URL or Id is not defined.",success:false});
+    }
+    response  = await getPostById(req.params.id);
+    return res.json(response);
+}
+const getPostsByUserController = async(req,res)=>{
+    if(req.param['userId']===undefined) {
+        return res.json({message:"Invalid URL or userId is not defined.",success:false});
+    }
+    response  = await getPostsByUser(req.params.userId);
+    return res.json(response);
+}
 const updatePostController = async(req,res)=>{
     let response = {};
     const key = req.params.id;
@@ -42,4 +45,4 @@ const deleteController = async(req,res)=>{
     response = await deletePostbyId(id);
     res.json(response);
 }
-module.exports = {addPostController,getPostController,updatePostController,deleteController};
+module.exports = {addPostController,getAllPostsController,getPostByIdController,getPostsByUserController,updatePostController,deleteController};

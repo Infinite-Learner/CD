@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const app = express()
 
-const db = require("./db/dbonfig");
+const db = require("./db/dbconfig");
 const postRoute = require("./routes/postRoutes")
 
 app.use(cors())
