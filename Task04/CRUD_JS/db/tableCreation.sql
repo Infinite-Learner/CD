@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS `Posts`;
+USE `Posts`;
+CREATE TABLE IF NOT EXISTS `Posts`.`Post_details`(
+    `id` INT NOT NULL  AUTO_INCREMENT,
+    `userId` INT NOT NULL,
+    `title` VARCHAR(255) NOT NULL,
+    `body` VARCHAR(255) NOT NULL,
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;
