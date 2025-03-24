@@ -90,6 +90,7 @@ WHERE id = ${key};`;
 
 const deletePostbyId = async(id)=>{
      try{
+        
                 const deleteQuery = `DELETE FROM Post_details WHERE id = ${id}`;
                 const[result] = await db.query(deleteQuery);
                 return {success:true,message:"Post updated successfully.",data:result};
