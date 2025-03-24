@@ -16,13 +16,12 @@ const post_data = [
         "body":"Test Body"
     }
     ,  {
-        "id":3,
+        
         "userId":3,
         "title":"Test Post 3",
         "body":"Test Body"
     },
     {
-        "id":4,
         "userId":4,
         "title":"Test Post 3",
         "body":"Test Body"
@@ -33,13 +32,13 @@ AppDataSource.initialize().then(
 const postRepo = AppDataSource.getRepository(Post_Ts);
 for(const post of post_data){
     const isExist = await postRepo.findBy({id:post?.id});
-    if(isExist.length>0){
-        console.log("Data already exists");
-    }
-    else{
+    // if(isExist.length>0){
+    //     console.log("Data already exists");
+    // }
+    // else{
         await postRepo.save(post);
         console.log("Data Seeded ", post);
-    }
+    // }
 
 }
 console.log("Completed.");
