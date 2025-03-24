@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path')
-const cors = require('cors')
 const bodyParser = require("body-parser");
 
 const app = express()
@@ -8,7 +7,6 @@ const app = express()
 const db = require("./db/dbconfig");
 const postRoute = require("./routes/postRoutes")
 
-app.use(cors())
 app.use(bodyParser.json())
 
 app.use("/posts",postRoute);
