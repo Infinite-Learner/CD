@@ -13,10 +13,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
+    "dev1": "nodemon dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "genMigration": "npx typeorm-ts-node-commonjs migration:generate -d src/data/AppDataSource.ts",
     "execMigrate": "npx typeorm-ts-node-commonjs migration:run -d src/data/AppDataSource.ts",
-    "seed":"ts-node src/seeders/initialSeeds.ts"
+    "abortMigrate": "npx typeorm-ts-node-commonjs migration:revert -d src/data/AppDataSource.ts",
+    "seed": "ts-node src/seeders/initialSeeds.ts"
   },
   "keywords": [],
   "author": "",

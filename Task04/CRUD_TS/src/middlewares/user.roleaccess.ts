@@ -2,6 +2,9 @@ import { NextFunction, Request, Response } from "express";
 import { roles } from "../roles/user.roles";
 import { JwtPayload, verify } from "jsonwebtoken";
 import { getUser } from "../services/user.services";
+import { configDotenv } from "dotenv";
+
+configDotenv();
 
 export const roleAccess = async (
     req: Request,
@@ -20,7 +23,6 @@ export const roleAccess = async (
             process.env.JWT_TOKEN as string
         ) as JwtPayload;
         const user = await getUser(payload.email);
-        const email = user?.email;
         const role = user?.role.toUpperCase();
         if (user == null || typeof user === "undefined") {
             res.send({ message: "invalid token" });
@@ -34,6 +36,8 @@ export const roleAccess = async (
         }
         next();
     } catch (error) {
+        console.log("error", error);
+        
         res.sendStatus(403);
         return;
     }

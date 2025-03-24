@@ -1,7 +1,8 @@
 [
     {
         "execMap": {
-            "ts": "ts-node"
+            "ts": "ts-node",
+            "js":"nodemon"
         }
     }
 ]
