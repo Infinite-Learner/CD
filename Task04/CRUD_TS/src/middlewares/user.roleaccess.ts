@@ -6,15 +6,13 @@ import { configDotenv } from "dotenv";
 
 configDotenv();
 
-export const roleAccess = async (
+export const roleAccess = async(
     req: Request,
     res: Response,
     next: NextFunction
-) => {
+)=>{
     try {
         const token = req.headers.authorization?.replace("Bearer ", "");
-        console.log("FF");
-        
         if (token === "") {
             res.send({ message: "Token not found" });
             return;
@@ -25,15 +23,12 @@ export const roleAccess = async (
         ) as JwtPayload;
         const user = await getUser(payload.email);
         const role = user?.role.toUpperCase();
-        if (user == null || typeof user === "undefined") {
+        if (user == null || typeof user === "undefined"){
             res.send({ message: "invalid token" });
             return;
         }
-        if (req.method === "POST" || req.method === "DELETE") {
-            console.log("ME");
-            
-            if (role === "" || !((role as string) in roles) || role !== "ADMIN") {
-                console.log('Dev');
+        if (req.method === "POST" || req.method === "DELETE"){
+            if (role === "" || !((role as string) in roles) || role !== "ADMIN"){
                 res.status(403).send({ message: "UnAuthorized access." });
                 return;
             }

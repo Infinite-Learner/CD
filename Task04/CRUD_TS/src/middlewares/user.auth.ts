@@ -19,7 +19,6 @@ export const authenticate = async (req: Request, res: Response, next: NextFuncti
         next();
 
     } catch (error) {
-        console.log(error);
         next(error);
         
     }
