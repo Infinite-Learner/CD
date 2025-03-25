@@ -13,8 +13,7 @@ export const roleAccess = async (
 ) => {
     try {
         const token = req.headers.authorization?.replace("Bearer ", "");
-        console.log("FF");
-        
+
         if (token === "") {
             res.send({ message: "Token not found" });
             return;
@@ -30,18 +29,16 @@ export const roleAccess = async (
             return;
         }
         if (req.method === "POST" || req.method === "DELETE") {
-            console.log("ME");
-            
             if (role === "" || !((role as string) in roles) || role !== "ADMIN") {
-                console.log('Dev');
                 res.status(403).send({ message: "UnAuthorized access." });
                 return;
             }
         }
         next();
-    } catch (error){
+    } catch (error) {
         console.log("error", error);
-        next(error);
+        
+        res.sendStatus(403);
         return;
     }
 };
