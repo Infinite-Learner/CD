@@ -7,14 +7,14 @@ import {
   getPostsbyuserId,
   updatePostbyId,
 } from "../services/post.services";
-import { Post_Ts } from "../entities/post.entity";
+
 
 export const addPostController = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   const response = await addPost(req.body);
-  res.json(response);
+  res.json({message:"Post Added",response});
 };
 
 export const getAllPostController = async (
