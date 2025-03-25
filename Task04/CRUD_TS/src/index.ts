@@ -1,17 +1,16 @@
 import express from "express";
 import { AppDataSource } from "./data/AppDataSource";
-import bodyParser from "body-parser";
 import postRoutes from "./routes/post.routes";
 import userRoutes from "./routes/user.routes";
 import { ErrHandler } from "./middlewares/req.error";
 
 const app: express.Application = express();
 const PORT: Number = 3001;
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
-app.use(ErrHandler)
+app.use(ErrHandler);
 
 app.get("/", (req, res) => {
   res.send("HELOO");

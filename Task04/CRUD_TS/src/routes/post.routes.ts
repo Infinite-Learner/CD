@@ -10,7 +10,7 @@ router.get('/', getAllPostController);
 router.get("/:id", getPostByIdController);
 router.get("/u/:userId", getPostsByuserIdController);
 
-router.post('/addPost', authenticate, roleAccess,addPostController);
+router.post('/addPost', authenticate,roleAccess,addPostController);
 
 router.put('/:id', updatePost);
 
