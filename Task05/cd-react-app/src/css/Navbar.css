@@ -1,0 +1,45 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+.nav-bar{
+    display: flex;
+    color:white;
+    background:rgba(24,5,79,255);
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.logo{
+    justify-self:flex-start;
+    height:60px;
+    width:60px;
+    float: left;
+    border-radius:10px;
+    background: white;
+
+}
+.nav-lists{
+    list-style: none;
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    margin-right: 10px;
+}
+.nav-lists button{
+    color:rgba(232,246,255,255);
+    background: none;
+    border: none;
+    border-radius: 5px;
+    height:30px;
+    
+}
+.nav-lists img{
+    background: rgba(255,255,255,255);
+    height:30px;
+    border-radius:20px;
+    width:30px;
+}
