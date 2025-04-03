@@ -1,14 +1,15 @@
-import { BaseSyntheticEvent, useState } from "react";
+import { BaseSyntheticEvent, useEffect, useState } from "react";
 
 import "../css/FormComponent.css";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 
-const Form = () => {
-  const [isRegister, setRegister] = useState<boolean>(true);
-  const [heading, setHeading] = useState("Register");
-  const [switchContent, setContent] = useState("Already have an account?-");
-  const [Log_or_Sign, setLogorSign] = useState("Login");
+const Form = ({ Register }: { Register: boolean }) => {
+  const [isRegister, setRegister] = useState<boolean>(Register);
+  const [heading, setHeading] = useState("");
+  const [switchContent, setContent] = useState("");
+  const [Log_or_Sign, setLogorSign] = useState("");
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -16,7 +17,11 @@ const Form = () => {
     CPassword: "",
     Role: "",
   });
-  const navigate = useNavigate();
+  useEffect(()=>{
+    setHeading(Register?"Register":"Login");
+    setLogorSign(Register?"Login":"Register");
+    setContent(Register?"Already have an account?-":"Are you new?")
+  },[])
   const registerUser = async () => {
     try {
       const { data } = await axios.post("http://localhost:3001/user/signup", {
@@ -32,28 +37,26 @@ const Form = () => {
     }
   };
   const UserLogin = async (email: string, password: string) => {
+    console.log("Login");
+    
     try {
       const { data } = await axios.post("http://localhost:3001/user/login", {
         headers: { "Content-Type": "application/json" },
         email: email,
         password: password,
       });
-      console.log(data);
-      if(!data.success) return false;
-      window.sessionStorage.setItem('auth_token',data.token);
-      window.sessionStorage.setItem('userId',data.userId);
-      window.sessionStorage.setItem('Role',data.role.toUpperCase())
-      return data.success;
+      if (!data.success) {window.sessionStorage.setItem("isLogged", data.success)
+        return;
+      }
+      window.sessionStorage.setItem("auth_token", data.token);
+      window.sessionStorage.setItem("userId", data.userId);
+      window.sessionStorage.setItem("Role", data.role.toUpperCase());
+       window.sessionStorage.setItem("isLogged", "true");
+      return await data.success;
     } catch (error) {
       return false;
     }
   };
- const componentDecider = ()=>{
-    const {Role} = window.sessionStorage;
-    Role==="ADMIN"?navigate("/AdminPanel"):Role==="USER"?navigate("/UserPanel"):alert("Something went wrong")
-    
- }
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -63,11 +66,8 @@ const Form = () => {
           reset(),
           (await registerUser()) ? alert("Success") : alert("failed"))
         : alert("password not match")
-      : (reset(),
-        (await UserLogin(formData.Email, formData.Password)
-        )
-          ? componentDecider()
-          : alert("failed"));
+      : reset(),
+      await UserLogin(formData.Email, formData.Password)?componentDecider():alert("Login Failed")
   };
   const dataChange = (e: BaseSyntheticEvent, key: string) => {
     setFormData({
@@ -78,6 +78,11 @@ const Form = () => {
       Role: key === "Role" ? e.target.value : formData.Role,
     });
   };
+  const componentDecider = ()=>{
+    const {Role} = window.sessionStorage;
+    Role==="ADMIN"?navigate("/AdminPanel"):Role==="USER"?navigate("/UserPanel"):alert("Something went wrong")
+    
+ }
   const reset = () =>
     setFormData({
       Name: "",
@@ -97,6 +102,7 @@ const Form = () => {
         setContent("Already have an account?"),
         setLogorSign("Login"));
   };
+  
   return (
     <div className="form-container">
       <form className="Form" onSubmit={handleSubmit}>

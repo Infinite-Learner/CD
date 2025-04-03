@@ -9,7 +9,6 @@ interface users {
   role: string;
 }
 export const AdminPanel = () => {
-  const [isAuthorized, setAuthorized] = useState(true);
   const [UserCardData, setUserCardData] = useState<[]>([]);
   const [PostCardData, setPostcardData] = useState<[]>([]);
   const [userEdit, setUserEdit] = useState({
@@ -22,13 +21,9 @@ export const AdminPanel = () => {
     title: "",
     body: "",
   });
-  const [isEditId, setEditId] = useState('');
-  const [isDeleteId, setDeleteId] = useState('');
+  const [isEditId, setEditId] = useState("");
+  const [isDeleteId, setDeleteId] = useState("");
   const [loading, setLoading] = useState(true);
-  const [isError, setError] = useState({
-    is: false,
-    msg: "",
-  });
   const navigate = useNavigate();
   const dataFetcher = async () => {
     try {
@@ -70,14 +65,15 @@ export const AdminPanel = () => {
           msg.includes("UnAuthorized access") /*  */ ||
           msg.includes("Token not found") ||
           msg.includes("Invalid token ")
-        ) {
-          setAuthorized(false);
+        ){
+          window.sessionStorage.setItem("isLogged","false");
           return;
         }
-        setError({ is: false, msg: msg });
-      }
+        window.sessionStorage.setItem("ErrMsg",msg);
+        navigate("/Error");
     }
   };
+}
   useEffect(() => {
     {
       <h1>Loading</h1>;
@@ -86,7 +82,7 @@ export const AdminPanel = () => {
   }, [loading]);
   const ChangeUser = (e: BaseSyntheticEvent, key: string) => {
     console.log(e.target.value);
-    
+
     setUserEdit({
       username: key === "Name" ? e.target.value : userEdit.username,
       email: key === "Email" ? e.target.value : userEdit.email,
@@ -109,41 +105,46 @@ export const AdminPanel = () => {
       setLoading(true);
     } catch {}
   };
-  const handleUpdate=async(userId:string)=>{
+  const handleUpdate = async (userId: string) => {
     console.log(userEdit);
     try {
       const { auth_token } = window.sessionStorage;
       console.log(auth_token);
       const updated = await axios
-        .put(`http://localhost:3001/user/updateUser/${userId}`,
-         userEdit ,
-            {headers:{"Content-Type": "application/json",
-            Authorization: "Bearer " + auth_token},}
-          
-        )
+        .put(`http://localhost:3001/user/updateUser/${userId}`, userEdit, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + auth_token,
+          },
+        })
         .catch((err) => {
           throw err;
         });
-        console.log(updated);
-        
+      console.log(updated);
+
       setLoading(true);
     } catch {}
-    
-  }
+  };
+
+
   const RenderData = () => {
     return (
       <>
         {UserCardData.map((user: users, i) =>
-          isEditId === user.id? (
+          isEditId === user.id ? (
             <tr key={i}>
               <td>
                 <input
-                  type="text"               
+                  type="text"
                   name=""
                   id=""
                   defaultValue={user.username}
                   onChange={(e) => {
-                    setUserEdit({username:user.username,role:user.role,email:user.email})
+                    setUserEdit({
+                      username: user.username,
+                      role: user.role,
+                      email: user.email,
+                    });
                     ChangeUser(e, "Name");
                   }}
                 />
@@ -178,7 +179,7 @@ export const AdminPanel = () => {
                       email: "",
                       role: "",
                     });
-                    setEditId('');
+                    setEditId("");
                   }}
                 >
                   Cancel
@@ -187,42 +188,66 @@ export const AdminPanel = () => {
             </tr>
           ) : (
             <tr key={i}>
-              <td>
-                {user.username}
-              </td>
+              <td>{user.username}</td>
               <td>{user.email}</td>
               <td>{user.role}</td>
-              {isDeleteId===user.id?<td><button onClick={()=>{DeleteHandler(user.id)}}>confirm</button><button onClick={()=>setDeleteId('')}>cancel</button></td>:
-              <td><button onClick={()=>{setUserEdit({username:user.username,role:user.role,email:user.email});setEditId(user.id)}}>Edit</button><button onClick={()=>{setDeleteId(user.id)}}>Delete</button></td>}
+              {isDeleteId === user.id ? (
+                <td>
+                  <button
+                    onClick={() => {
+                      DeleteHandler(user.id);
+                    }}
+                  >
+                    confirm
+                  </button>
+                  <button onClick={() => setDeleteId("")}>cancel</button>
+                </td>
+              ) : (
+                <td>
+                  <button
+                    onClick={() => {
+                      setUserEdit({
+                        username: user.username,
+                        role: user.role,
+                        email: user.email,
+                      });
+                      setEditId(user.id);
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => {
+                      setDeleteId(user.id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
+              )}
             </tr>
           )
         )}
       </>
     );
   };
+
+
   return (
     <>
-      {isAuthorized ? (
-        isError.is ? (
-          navigate("/Error", { state: { ErrMsg: isError.msg } })
-        ) : (
-          <>
-            <table>
-              <thead>
-                <tr>
-                  <th>UserName</th>
-                  <th>Email</th>
-                  <th>Role</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>{RenderData()}</tbody>
-            </table>
-          </>
-        )
-      ) : (
-        (alert("UnAuthorized"), navigate("/"))
-      )}
+      <>
+        <table>
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>{RenderData()}</tbody>
+        </table>
+      </>
     </>
-  );
-};
+  )
+}
