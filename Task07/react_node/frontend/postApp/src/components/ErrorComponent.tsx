@@ -1,8 +1,7 @@
 import { useLocation } from "react-router";
 
 export const ErrorComponent=()=>{
-    const location = useLocation();
-    const ErrMsg = location.state.ErrMsg;
+    const {ErrMsg} = window.sessionStorage; 
         return(
         <>
         <h1>
