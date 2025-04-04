@@ -2,7 +2,7 @@
 import { BaseSyntheticEvent, useEffect, useState } from "react";
 import axios from "axios"
 import { APIDATA } from "../interfaces/api";
-import { server } from "typescript";
+
 
 interface ServerResp{
   sucess:boolean;
@@ -31,11 +31,9 @@ export const RepoComponent = () => {
   const dataFetcher = async () => {
     try {
        await axios
-        .get(`http://localhost:3010/repo/AllRepo`, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }).then(response=>{
+        .get(`http://localhost:3010/repo/allRepo`).then(response=>{
+          console.log(response);
+          
           const data:ServerResp = response.data as ServerResp; 
           setData(data?.repo);
           setLoading(false);
@@ -60,8 +58,8 @@ export const RepoComponent = () => {
     setrepoEdit({
       full_name: key === "Fname" ? e.target.value : repoEdit.full_name,
       name: key === "Name" ? e.target.value : repoEdit.name,
-      private: key === "pr" ? e.target.value : repoEdit.private,
-      fork: key === "fk" ? e.target.value : repoEdit.fork,
+      private: key === "pr" ? Boolean(e.target.value) : repoEdit.private,
+      fork: key === "fk" ? Boolean(e.target.value) : repoEdit.fork,
       url: key === "ur" ? e.target.value : repoEdit.url,
       downloads_url: key === "ddu" ? e.target.value : repoEdit.downloads_url,
       deployments_url:

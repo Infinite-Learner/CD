@@ -50,6 +50,7 @@ export const AuthUser = () => {
         deployments_url: e.deployments_url,
       };
     });
+    
     await axios
       .post(`http://localhost:3010/repo/addRepoDetails`, {
         headers: {
@@ -57,13 +58,13 @@ export const AuthUser = () => {
           Authorization: "Bearer " + access_token,
         },
         processed_data,
+      }).then(response=>{
+        
+        const data:repoResponse = response.data as repoResponse;
+        setAuth(data?.success);
+        data.success?(navigate("/RepoDatas"),setLoading(false)):<>Something went wrong</>
+
       })
-      .then((response) => {
-        const data: repoResponse = response.data as repoResponse;
-        console.log(data.success);
-        data.success?navigate("/RepoDatas"):<><h1>Something Wrong</h1></>;
-        setLoading(!data.success);
-      });
 
     }
   };
