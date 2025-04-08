@@ -1,0 +1,26 @@
+.container{
+    background: wheat;
+    gap: 5px;
+    width:100%;
+}
+
+.container img{
+    border:black solid 1px;
+    width: fit-content;
+}
+article{
+
+    font-size: 18px;
+    font-family: "Fira Code";
+}
+article li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+
+a:hover{
+    color:blue;
+}
