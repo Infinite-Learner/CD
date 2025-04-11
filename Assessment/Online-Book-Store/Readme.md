@@ -10,8 +10,8 @@
 > - Add / Modify / Remove Publication.
 > - API based notification.
 > - Report an Issue for content quality.
-> - Push notification(if possible).
-> - Plan based content delivery.
+> - Push notification(Optional).
+> - Plan based content delivery(Optional).
 ## Functionalities : 
 > - It provides RBAC (Role Based Authentication Control) by following ***Roles :***
     - ***Admin***
