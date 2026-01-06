@@ -10,6 +10,8 @@ export class Post_CRON{
     @Column()
     title:string
     @Column()
+    title1:string
+    @Column()
     body:string
     @Column()
     Time:Date
